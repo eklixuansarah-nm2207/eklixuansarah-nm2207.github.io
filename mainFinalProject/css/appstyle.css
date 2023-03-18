@@ -35,10 +35,6 @@ h2 {
     width:100%;
 }
 
-#section0{
-    height:100vh;
-    position:relative;
-}
 /* styling the container for the video */
 .video-container {
     height:100vh;
