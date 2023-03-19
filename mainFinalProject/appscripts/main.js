@@ -38,8 +38,10 @@ document
 
 
   document.getElementById("yes").addEventListener("click", function () {
-    document.location.href="#section3.1";
+    document.location.href="#section2.1";
   });
+
+// to add eventlistener for no button
 
 // bar chart for region penetration %
 
@@ -47,7 +49,7 @@ const labelRegion = ["Africa", "Asia", "South America", "North America", "Europe
 const percentage = ["86.6", "86.1", "85.3", "84.6", "77.5", "76.3"]
 
 //Source of data: Statista 
-
+// need to work on adding worldwide average % as a line to compare all the regions to
 const dataObj = {
   labels: labelRegion,
   datasets:[
@@ -94,8 +96,12 @@ new Chart("gaming-penetration-chart",
   }
 });
 
-// pie chart for gender demographics
+// map chart
 
-// pie chart for age demographics
+// scatterplot worldwide hours and lifesat
 
-// event handler that changes chart view from gender to age and vice versa when clicked
+// pie chart of regions
+
+// scatterplot of different regions
+
+// event handler that changes chart view between regions when clicked
