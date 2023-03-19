@@ -123,6 +123,7 @@ input[type="text"]
     align-items:center;
 }
 
+/* styling the yes/no button */
 .yesNoButton {
     height:50px;
     width: 100px;
@@ -143,36 +144,52 @@ input[type="text"]
 #section4{
     height:fit-content;
 }
-/* gender chart */
+
+/* map chart */
 #canvas-container2{
     background-color:bisque;
     width:70%;
     height:400px;
 }
 
-/* age chart */
+/* scatterplot */
 #canvas-container3{
     background-color:bisque;
     width:70%;
     height:400px;
 }
 
-/* styling for button id="click" */
-#click{
-    height:50px;
-    width: 150px;
-    font-family:'Fredoka One', cursive;
-    font-size:12px;
-    background-color:rgb(76, 117, 147);
-    color:rgb(7, 41, 7);
-    border-radius:5px;
-}
-/* map chart */
+/* pie chart by region */
 #canvas-container4{
     background-color:bisque;
     width:70%;
     height:300px;
 }
 
-/* styling gender and age chart */
+/* scatterplots */
+#canvas-container5{
+    background-color:bisque;
+    width:70%;
+    height:300px;
+}
 
+/* arranging buttons in table */
+
+#buttonList{
+   max-width:80%;
+   display:flex;
+   /* not sure why wrap isn't working.. buttons overflow when screen is smaller. need to rework */
+   flex-wrap:wrap;
+   justify-content:center;
+
+}
+/* styling the buttons to see different regions */
+.region{
+    height:20px;
+    width: 120px;
+    font-size:15px;
+    font-family:'Rubik', sans-serif;
+    background-color:rgb(170, 104, 169);
+    color:rgb(0, 2, 0);
+    border-radius:5px;
+}
