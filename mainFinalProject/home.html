@@ -24,21 +24,21 @@
 </div>
 
 
-<div class="section" id="myName">
+<div class="mainsection" id="myName">
     <h2>By Ek Li Xuan Sarah</h2>
     <p><i>by the way, the video gameplay that you just saw is my own! :) </i></p>
 </div>
 
-<div class="section" id="section1" style="background-color:yellow;">
+<div class="mainsection" id="section1">
 
-    <h1 style="color:brown; text-align:center;" id="nameInput">What is your name?</h1>
+    <h1 style="color:bisque; text-align:center;" id="nameInput">What is your name?</h1>
     <input type="text" id="nameBox">
     <br>
     <a href="#section2" id="nameButton"> That's me! </a>
     
 </div>
 
-<div class="section" id="section2" style="background-color:green;">
+<div class="section" id="section2">
     <div class = "text">
         <h1 id="greeting"></h1>
         <p> Welcome to my website about gaming. Here I will be exploring the effects of gaming on life satisfaction.
@@ -53,47 +53,61 @@
             <input type="button" value="YES" id="yes" class="yesNoButton">
             <input type="button" value="NO" id="no" class="yesNoButton">
         </div>
+    </div>
+</div>
         
     <!-- need to work on hiding section 2.1 and 2.2 and revealing one only after pressing either button -->
     <!-- intro paragraph about games maybe -->
-        <div id="section2.1">
-            <p>Nice! I love games too! 
-                Nice! I love games too! Nice! I love games too! Nice! I love games too! Nice! I love games too! Nice! I love games too! Nice! I love games too! Nice! I love games too! Nice! I love games too! Nice! I love games too! Nice! I love games too! 
-            </p>
-        </div>
-        <div id="section2.2">
-            <p>Oh,that's alright! It would still be interesting to learn about the worldwide gaming situation, wouldn't it? :)
-                Oh,that's alright! It would still be interesting to learn about the worldwide gaming situation, wouldn't it? :)Oh,that's alright! It would still be interesting to learn about the worldwide gaming situation, wouldn't it? :)Oh,that's alright! It would still be interesting to learn about the worldwide gaming situation, wouldn't it? :)Oh,that's alright! It would still be interesting to learn about the worldwide gaming situation, wouldn't it? :)Oh,that's alright! It would still be interesting to learn about the worldwide gaming situation, wouldn't it? :)Oh,that's alright! It would still be interesting to learn about the worldwide gaming situation, wouldn't it? :)Oh,that's alright! It would still be interesting to learn about the worldwide gaming situation, wouldn't it? :)Oh,that's alright! It would still be interesting to learn about the worldwide gaming situation, wouldn't it? :)
-            </p>
-        </div>
+        
+    
+    
+<div class="section" id="section3">
+    <div class="text" id="section3.1">
+        <p> <t id="change"> Nice! I love games too! <br><br>
+            I want you to think of your gaming habits and attitudes. How often do you game per week? For how long? How do you feel while gaming? How do you feel <i>after</i> gaming? <br><br>
+            
+            I'm sure you would understand the feeling of wanting to keep continuing game after game, would you? </t> It's something like scrolling on TikTok, for example.
+            You keep telling yourself, <h2> <i>"Just one more video. Just 5 more minutes." </i></h2>But when you come to your senses, an hour has gone by. Oh no! What now? 
+            <br>
+            
+            <h2>Many gamers often feel like this.</h2>And the fact that the gaming industry is designed to keep you enticed, to keep you playing, for it to earn revenue, doesn't make the situation any better... <br><br>
+            
+            Let's now take a look at how much gaming has penetrated countries worldwide! Maybe this could help us determine if gaming could become a problem. <br><br><br><br>
+
+            <button id="ok" class="button"> Okay! </button>
+        </p>
     </div>
 </div>
 
-<div class="section" id= "section3" style="background-color:rgb(39, 39, 92)">
+
+<div class="section" id= "section4">
     <h1>Bar Chart about Gaming Penetration By Region</h1>
     <div id="canvas-container1"> 
         <canvas id="gaming-penetration-chart"></canvas> 
     </div> <br>
     <div class="text">
-        <p> paragraph talking about the bar chart paragraph talking about the bar chart paragraph talking about the bar chart paragraph talking about the bar chartparagraph talking about the bar chartparagraph talking about the bar chart
-            aragraph talking about the bar chart paragraph talking about the bar chart paragraph talking about the bar chart paragraph talking about the bar chartparagraph talking about the bar chartparagraph talking about the bar chart
+        <p> Well, it seems that all the regions have pretty high gaming-penetration rates! This graph depicts the percentage of citizens in the region who play games, as of 2022. The world average percentage is 82%! <br><br>
+            Now we know that gaming is prevalent worldwide, so it could pose a problem to lots of people. With such a huge amount of people playing games, it's inevitable that there are some people who play more than others. Maybe a little too much as well. 
+            
+            <br><br>Could gaming affect life satisfaction? If you think about it, there are pros and cons to gaming. On one hand, you could be relaxed and take your mind off reality while gaming. But on the other hand, you could meet nasty people online (presuming it's an online multiplayer game), or you could 
+            lose precious time that could be spent on more meaningful or fulfiling things.
         </p>
     </div>
 </div>
 
 <!-- need to work on hiding and revealing charts -->
-<div class="section" id= "section4" style="background-color:#556b2f; height:1000px;">
+<div class="section" id= "section5" style="height:1000px;">
     <h1>Introduction</h1>
     <div class="text">
         <p> 
             In order to answer our questions about the effects of gaming on life satisfaction, let's look at the biggest openly available dataset collected by Marian Sauter and Dejan Draschkow.
-            <a href="https://osf.io/vnbxk/wiki/home/" style="color:rgb(33, 33, 105);">You can access the original dataset here. </a>
+            <a href="https://osf.io/vnbxk/wiki/home/" style="color:rgb(138, 138, 198);">You can access the original dataset here. </a>
         </p>
 
         <p> Although the dataset consists of over 13000 gamers from 109 countries of different age groups, I would like to focus on a certain subset of the data. As for data cleaning, I have removed responses which have values of "Not Applicable" so that
             I can do the relevant analyses. I have also filtered out the responses that are too unrealistic (e.g., 8000 hours of gameplay per week). Therefore, the main question of my analysis of this study would be: 
             
-            <p style="color:rgb(33, 33, 105)">Is there a negative impact of number of gaming hours per week on life satisfaction of League of Legends youth gamers? </p>
+            <p style="color:rgb(138, 138, 198)">Is there a negative impact of number of gaming hours per week on life satisfaction of League of Legends youth gamers? </p>
         </p>
         
         <hr width= "90%" color="rgb(33, 33, 105)">
@@ -108,12 +122,25 @@
     </div>
 </div>
 
-
-<div class="section" id="section5" style="background-color:rgb(107, 107, 192)"> 
-    <h1>Taking a look at the average number of hours and life satisfaction scale</h1>
-    <div id="canvas-container2"> 
-        <canvas id="map-chart"></canvas> 
+<div class="section" id="section6">
+    <h1>Study Demographics</h1>
+    <div id="charts">
+        <div>
+            <canvas id="demographics1"></canvas>
+        </div>
+        <div>
+            <canvas id="age"></canvas>
+        </div>
     </div>
+    <div name="buttonContainer">
+        <button class="button" id="toggle">Change to Recruitment Platform</button>
+    </div>
+</div>
+
+<div class="section" id="section7"> 
+    <h1>Taking a look at the average number of hours and life satisfaction scale</h1>
+    <div id="mapchart"> </div>
+    <div id="mapchart2"> </div>
     <br>
     <div class="text">
         <p> 
@@ -122,7 +149,7 @@
     </div>
 </div>
 
-<div class="section" id="section6" style="background-color:rgb(192, 107, 140)"> 
+<div class="section" id="section8"> 
     <h1>Now that we have seen various average hours and scores ... What about the correlation between them? </h1>
 
    
@@ -139,18 +166,20 @@
 </div>
 
 
-<div class="section" id="section7" style="background-color:rgb(77, 132, 141)"> 
-    <div class="text" style="height:100vh;">
+<div class="section" id="section9"> 
+    <div class="text">
     
             <h1>No, we cannot stop here, <t class="name"></t></h1>
 
             <p>Maybe let's take a look at the survey participant demographics to see if we can find something. How about we examine the various regions instead?</p>
     
-            
+
     </div>
+</div>
+<div class="section" id="section10">
         <h1>Breakdown of Regions</h1>
         <div id="canvas-container4"> 
-        <canvas id="pie-chart"></canvas> 
+        <canvas id="region-pie"></canvas> 
         </div>
     <br>
     
@@ -162,7 +191,7 @@
     </div>
 </div>
 
-<div class="section" id="section8" style="background-color:rgb(101, 61, 101)"> 
+<div class="section" id="section11"> 
     <h1>Scatterplot of Average Gaming Hours vs. Life Satisfaction by Region</h1>
 
     <!-- need to include all 6 scatter plots where user can change chart view to the different regions accordingly -->
@@ -191,7 +220,7 @@
     </div>
 </div>
 
-<div class="section" id="section9" style="background-color:rgb(73, 58, 11)"> 
+<div class="section" id="section12"> 
     <h1>Why do we still have low correlation?</h1>
     <div class="text">
         <p> Although the dataset claims to be the biggest dataset, it might not be the most accurate in showing a correlation between gaming and life satisfaction. Why? This is because there are many biases in the dataset, as well as the data collection methods.
@@ -209,7 +238,7 @@
    
 </div>
 
-<div class="section" id="section10" style="background-color:rgb(0, 0, 0)"> 
+<div class="section" id="section13"> 
     <h1>Concluding Thoughts</h1>
     <div class="text">
         <p> Even though the correlation that we have established between the average number of gaming hours and life satisfaction is weak, we still do see a small decline. 
@@ -218,7 +247,7 @@
         <p>Future research can focus on narrowing the scope to establish a stronger correlation between the 2 variables, attempting to control for possible extraneous variables.
         </p>
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     <h1> Thank you for visiting my website, <t class="name"></t> <br> I hope that it has been interesting and informative for you! </h1>
 </div>
 </body>
