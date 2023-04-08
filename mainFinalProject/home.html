@@ -1,260 +1,342 @@
 <!DOCTYPE html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="css/appstyle.css">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Rubik+Iso&display=swap" rel="stylesheet">
+    <!-- importing fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;0,900;1,300;1,500;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- scroll reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script>ScrollReveal({ reset: true });</script>
+    <script> ScrollReveal({ reset: true });</script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- chart js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- chart annotation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <!-- animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
     <script defer type="text/javascript" src="appscripts/main.js"></script>
-    </head>
 </head>
 
 <body>
-<div class="video-container" id="video-container">
-        <h1> GAMING</h1>
+
+    <div class="section">
+        <h1>Please turn your sound on for the best experience</h1>
+        <!-- button brings viewer to next section -->
+        <button id="soundon" class="button"> <b>Okay, my sound is on! </b></button>
+    </div>
+
+    <!-- video background -->
+    <div class="video-container" id="video-container">
+        <h1 id="press"> GAMING</h1>
+        <!-- video plays automatically and has no sound -->
         <video autoplay loop muted id="video">
             <source src="resources/gameVideo.mp4" type="video/mp4">
         </video>
-        <!-- tried to loop audio but it doesn't work, need to debug -->
-        <audio loop id ="song" src="resources/song.mp3"></audio>
-</div>
+        <!-- audio accompanies the video -->
+        <audio loop id="song" src="resources/song.mp3"></audio>
+    </div>
 
+    <div class="section" id="myName">
+        <h2>By Ek Li Xuan Sarah</h2>
+        <h3>A0237767M</h3>
+    </div>
 
-<div class="mainsection" id="myName">
-    <h2>By Ek Li Xuan Sarah</h2>
-    <p><i>by the way, the video gameplay that you just saw is my own! :) </i></p>
-</div>
+    <div class="section" id="section1">
+        <!-- user gets to type in their name for a customised webpage -->
+        <h1 id="nameInput">What is your name?</h1>
+        <input type="text" id="nameBox"><br>
+        <!-- button to bring user to next section, as well as to activate the changing HTML js -->
+        <a href="#section2" id="nameButton"> That's me! </a>
+    </div>
 
-<div class="mainsection" id="section1">
-
-    <h1 style="color:bisque; text-align:center;" id="nameInput">What is your name?</h1>
-    <input type="text" id="nameBox">
-    <br>
-    <a href="#section2" id="nameButton"> That's me! </a>
-    
-</div>
-
-<div class="section" id="section2">
-    <div class = "text">
-        <h1 id="greeting"></h1>
-        <p> Welcome to my website about gaming. Here I will be exploring the effects of gaming on life satisfaction.
-            Are there many people who like to play games? 
-            Is excessive gaming really as bad as people think it is? Do we need to do something about it? 
-        </p>
-        <p>
-            Firstly, let's talk about you, <t class="name"></t>
-        </p>
-        <h2>Do you like games?</h2>
-        <div id="question">
-            <input type="button" value="YES" id="yes" class="yesNoButton">
-            <input type="button" value="NO" id="no" class="yesNoButton">
+    <div class="section" id="section2">
+        <div class="text">
+            <h1 id="greeting"></h1>
+            <p> Welcome to my website about gaming. Here I will be exploring the effects of gaming on life satisfaction.
+                Are there many people who like to play games?
+                Is excessive gaming really as bad as people think it is? Do we need to do something about it? </p>
+            <!-- use of a random letter 't' to indicate that the area should be replaced with the user's name -->
+            <p> Firstly, let's talk about you, <t class="name"></t>
+            </p>
+            <h2>Do you like games?</h2>
+            <!-- button to bring user to section. HTML changes according to answer. -->
+            <div id="question">
+                <input type="button" value="YES" id="yes" class="button">
+                <input type="button" value="NO" id="no" class="button">
+            </div>
         </div>
     </div>
-</div>
-        
-<div class="section" id="section3">
-    <div class="text" id="section3.1" style="height:1000px;">
-        <br><br>
-        <p> <t id="change"> Nice! I love games too! <br><br>
-            I want you to think of your gaming habits and attitudes. How often do you game per week? For how long? How do you feel while gaming? How do you feel <i>after</i> gaming? <br><br>
-            
-            I'm sure you would understand the feeling of wanting to keep continuing game after game, would you? </t> It's something like scrolling on TikTok, for example.
-            You keep telling yourself, <h2> <i>"Just one more video. Just 5 more minutes." </i></h2>But when you come to your senses, an hour has gone by. Oh no! What now? 
-            <br>
-            
-            <h2>Many gamers often feel like this.</h2>
-            According to Harvard Health, playing too many games can be negative for gamers, resulting in effects like diminished physical or psychological health (Grinspoon, 2020). 
-            And the fact that the gaming industry is designed to keep you enticed, to keep you playing, for it to earn revenue, doesn't make the situation any better... <br><br>
-            
-            Let's now take a look at how much gaming has penetrated countries worldwide! Maybe this could help us determine if gaming could become a problem. <br><br><br><br>
 
-            <button id="ok" class="button"> <b>Okay!</b> </button>
-        </p>
-    </div>
-</div>
-
-
-<div class="section" id= "section4" style="height:fit-content;">
-    <h1>Bar Chart about Gaming Penetration By Region</h1>
-    <div id="canvas-container1"> 
-        <canvas id="gaming-penetration-chart"></canvas> 
-    </div> <br>
-    <div class="text">
-        <p> Well, it seems that all the regions have pretty high gaming-penetration rates! This graph depicts the percentage of citizens in the region who play games, as of 2022. The world average percentage is 82%! <br><br>
-            Now we know that gaming is prevalent worldwide, so it could pose a problem to lots of people. With such a huge amount of people playing games, it's inevitable that there are some people who play more than others. Maybe a little too much as well. 
-            
-            <br><br>Could gaming affect life satisfaction? If you think about it, there are pros and cons to gaming. On one hand, you could be relaxed and take your mind off reality while gaming. But on the other hand, you could meet nasty people online (presuming it's an online multiplayer game), or you could 
-            lose precious time that could be spent on more meaningful or fulfiling things.
-        </p>
-    </div>
-</div>
-
-<div class="section" id= "section5" style="height:1000px;">
-    <h1>Introduction</h1>
-    <div class="text">
-        <p> 
-            In order to answer our questions about the effects of gaming on life satisfaction, let's look at the biggest openly available dataset collected by Marian Sauter and Dejan Draschkow.
-            <a href="https://osf.io/vnbxk/wiki/home/" style="color:lightpink">You can access the original dataset here. </a>
-        </p>
-
-        <p> Although the dataset consists of over 13000 gamers from 109 countries of different age groups, I would like to focus on a certain subset of the data. As for data cleaning, I have removed responses which have values of "Not Applicable" so that
-            I can do the relevant analyses. I have also filtered out the responses that are too unrealistic (e.g., 8000 hours of gameplay per week). Therefore, the main question of my analysis of this study would be: 
-            
-            <p style="color:rgb(252, 252, 254)">Is there a negative impact of number of gaming hours per week on life satisfaction of League of Legends youth gamers? </p>
-        </p>
-        
-        <hr width= "90%" color="bisque">
-
-        <h3> What is League of Legends? </h3>
-        <p> League of Legends (LoL), commonly referred to as <i>League</i>, is an online multiplayer battle arena game by RiotGames. Players gather to fight each other in teams, with games ranging from 15 minutes to 40 minutes on average. Since there is no limit to the number of games you can play,
-        and there are plenty of characters (also known as <i>champions</i>) to pick from, one would find themselves moving from game to game without rest. The contents of the game might be the same, but the people you play with are always different, which result in different battle experiences. Therefore,
-        one would not get tired of it easily and can play for hours. </p>
-
-        <p>I personally have an interest in this game and have also played for hours in a day before. Therefore, I thought that it would be interesting to dive into the effects of excessive gaming on life satisfaction. </p>
-        
-    </div>
-</div>
-
-<div class="section" id="section6" style="min-height:1000px;">
-    <h1>Study Demographics</h1>
-    <div id="charts">
-        <div>
-            <canvas id="demographics1"></canvas>
-        </div>
-        <div>
-            <canvas id="age"></canvas>
+    <div class="section" id="section3">
+        <div class="text">
+            <p>
+                <t id="change"> </t>
+                You keep telling yourself, <h2> <i>"Just one more time. Just 5 more minutes."</i></h2>
+                When you come to your senses, two hours have gone by. Oh no! What now?
+                <br>
+                <h2>Many gamers often feel like this.</h2>
+                According to Harvard Health, playing too many games can be negative for gamers, resulting in effects
+                like diminished physical or psychological health (Grinspoon, 2020).
+                And the fact that the gaming industry is designed to keep you enticed, to keep you playing, for it
+                to earn revenue, doesn't make the situation any better... <br><br>
+                <h3>Let's now take a look at how much gaming has penetrated countries worldwide!</h3>
+            </p>
         </div>
     </div>
-    <div name="buttonContainer">
+
+    <div class="section">
+        <!-- text animation -->
+        <div class="text0">Could this be a problem?</div>
+        <div class="text1">Could this be a problem?</div>
+        <div class="text2">Could this be a problem?</div>
+        <div class="text3">Could this be a problem?</div>
+    </div>
+
+    <div class="section" id="section4">
+        <h1>Gaming Penetration by Region</h1>
+        <div id="canvas-container1">
+            <canvas id="gaming-penetration-chart"></canvas>
+        </div>
+        <div class="text">
+            <p> Well, it seems that all the regions have pretty high gaming-penetration rates!
+                This graph depicts the percentage of citizens in the region who play games, as of 2022. The world
+                average percentage is 82%! <br><br>
+                
+                We know that gaming is prevalent worldwide, so it could pose a problem to lots of people. With such
+                a huge amount of people
+                playing games, it's inevitable that there are some people who play more than others. Maybe a little too
+                much as well. <br><br>
+                
+                Could gaming affect life satisfaction? If you think about it, there are pros and cons to gaming. On one
+                hand, you could be relaxed and take your mind off reality while gaming. But on the other hand, you could meet nasty people online
+                (presuming it's an online multiplayer game), or you could lose precious time that could be spent on more meaningful or fulfiling
+                things.
+            </p>
+        </div>
+    </div>
+
+    <div class="section" id="section5">
+        <h1>Introduction</h1>
+        <div class="text">
+            <p>
+                In order to answer our questions about the effects of gaming on life satisfaction, let's look at the
+                biggest openly available dataset collected by Marian Sauter and Dejan Draschkow.
+                <!-- link to access original data -->
+                <a href="https://osf.io/vnbxk/wiki/home/" style="color:lightpink">You can access the original dataset here. </a>
+            </p>
+            
+            <p> Although the dataset consists of over 13000 gamers from 109 countries of different age groups, I would
+                like to focus on a certain subset of the data. As for data cleaning, I have removed responses which have
+                values of "Not Applicable" so that
+                I can do the relevant analyses. I have also filtered out the responses that are too unrealistic (e.g.,
+                8000 hours of gameplay per week). Therefore, the main question of my analysis of this study would be:
+            
+                <p style="color:rgb(252, 252, 254)">Is there a negative impact of number of gaming hours per week on life
+                satisfaction of League of Legends youth gamers? </p>
+            </p>
+
+            <hr width="90%" color="bisque">
+        </div>
+    </div>
+
+    <div class="section">
+        <h1>First... What is League of Legends? </h1>
+        <div class="text">
+            <p> League of Legends (LoL), commonly referred to as <i>League</i>, is an online multiplayer battle arena
+                game by RiotGames. Players gather to fight each other in teams, with games ranging from 15 minutes to 40
+                minutes on average. Since there is no limit to the number of games you can play,
+                and there are plenty of characters (also known as <i>champions</i>) to pick from, one would find
+                themselves moving from game to game without rest. The contents of the game might be the same, but the
+                people you play with are always different, which result in different battle experiences. Therefore,
+                one would not get tired of it easily and can play for hours.<br><br>
+
+                I personally have an interest in this game and have also played for hours in a day before. (The video
+                you saw at the start of this website is a video of my League of Legends gameplay!) Therefore, I
+                thought that it would be interesting to dive into the effects of excessive gaming on life satisfaction.
+            </p>
+        </div>
+    </div>
+
+    <div class="section" id="section6">
+        <h1>Study Demographics</h1>
+        <div id="charts">
+            <div>
+                <canvas id="demographics1"></canvas>
+            </div>
+            <div>
+                <canvas id="age"></canvas>
+            </div>
+        </div>
+        <!-- toggle button to switch between chart views -->
         <button class="button" id="toggle"> <b>Change to Recruitment Platform</b></button>
-    </div>
-    <div class="text">
         
-        <p>
-        <subheading>Gender:</subheading> There are 9416 participants in total, with a whopping 94.5% of males, as compared to 5.2% of females, and 0.3% of other genders. <br><br>
-        
-        <subheading>Recruitment Platform:</subheading> Most of the participants are recruited from Reddit, a popular international platform for gaming discourse. <br><br>
-    
-        <subheading>Ages:</subheading> When we split the participants according to their ages, we can see that the number of participants decrease as the age goes up. Thus, the bulk of our participants to be analysed are youths of 18 to 19 years old (49%).
-        </p>
-    </div>
-</div>
+        <div class="text">
+            <p>
+                <subheading>Gender:</subheading> There are 9416 participants in total, with a whopping 94.5% of males,
+                as compared to 5.2% of females, and 0.3% of other genders. <br><br>
 
-<div class="section" id="section7"> 
-    <h1>Taking a look at the average number of hours and life satisfaction scale</h1>
-    <div id="mapchart"> </div>
-    <br>
-    <div class="text">
-        <p> 
-        Here is the world map which depicts the average number of hours per week of each country, as well as the corresponding life satisfaction score. Here we can also see which countries have higher average gaming hours, by looking at the shade of colours.
-        </p>
-    </div>
-</div>
+                <subheading>Recruitment Platform:</subheading> Most of the participants are recruited from Reddit, a
+                popular international platform for gaming discourse. <br><br>
 
-<div class="section" id="section8"> 
-    <h1>Now that we have seen various average hours and scores ... What about the correlation between them? </h1>
+                <subheading>Ages:</subheading> When we split the participants according to their ages, we can see that
+                the number of participants decrease as the age goes up. Thus, the bulk of our participants to be
+                analysed are youths from 18 to 19 years old (49%). <br><br>
 
-    <div id="canvas-container3"> 
-        <canvas id="ww-scatter-plot"></canvas> 
-    </div>
-    <br>
-    <div class="text">
-        <p> I foresee a look of confusion on your face, <t class="name"></t> Indeed, I was very surprised to see that there is such a low correlation between average number of gaming hours per week and average life satisfaction. </p>
-            
-        <p>What does this mean? Do we merely just conclude that there is a low correlation between gaming and life satisfaction? Is this the end?
-        </p>
-    </div>
-</div>
-
-
-<div class="section" id="section9"> 
-    <div class="text">
-    
-            <h1>No, we cannot stop here, <t class="name"></t></h1>
-
-            <p>Maybe let's take a look at the survey participant demographics to see if we can find something. How about we examine the various regions instead?</p>
-    
-
-    </div>
-</div>
-<div class="section" id="section10">
-        <h1>Breakdown of Regions</h1>
-        <div id="canvas-container4"> 
-        <canvas id="region-pie"></canvas> 
+                <h3>THINK.... Could this result in potential drawbacks? </h3>
+            </p>
         </div>
-    <br>
+    </div>
+
+    <div class="section" id="section7" style="height:900px;">
+        <h1>World Map for Gaming Hours and Life Satisfaction</h1>
+        <div class="text">
+            This interactive world map depicts the average number of gaming hours per week of each country, as well as their
+            corresponding average life satisfaction score. Here we can also see which countries have higher average gaming
+            hours, by looking at the shade of colours. The darker the shade of red, the higher the average amount of gaming hours.
+        </div>
     
-    <div class="text">
-        <p> It seems that the survey participant demographics aren't evenly spread out. Instead, we see a concentration of participants from the North America and Europe region. </p>
-            
-        <p> Let's now take a closer look into the correlation between gaming and life satisfaction by regions!
-        </p>
-    </div>
-</div>
-
-<div class="section" id="section11"> 
-    <h1>Scatterplot of Average Gaming Hours vs. Life Satisfaction by Region</h1>
-
-    <!-- need to include all 6 scatter plots where user can change chart view to the different regions accordingly -->
-    <div id="canvas-container5"> 
-        <canvas id="scatter-plots"></canvas> 
-    </div>
-    <div id="buttonList">
-    <input type="button" value="Africa" class="region">
-    <input type="button" value="Asia" class="region">
-    <input type="button" value="Europe" class="region">
-    <input type="button" value="North America" class="region">
-    <input type="button" value="Oceania" class="region">
-    <input type="button" value="South America" class="region">
+        <div id="mapchart"></div>
     
-    </div>
-    <div class="text">
-        <p> As we can see, the correlation values of different regions <area shape="circle" coords="" href="" alt=""> still pretty low. 
+        <div class="text">
+            A quick scan through the map tells us that most countries seem to be in the 20s range for their average number of gaming hours per week. This translates to roughly at least 3 hours a day on average!
+            Life satisfaction seems to be generally hovering around the 18s to 20s, whereas the maximum score is 35. Now that we are seeing all these values, how do we make sense of it? 
             
-        <p>I'm wondering if you noticed something different, <t class="name"></t>
-        Africa's scatter plot is showing that there is a positive correlation between average number of gaming hours and life satisfaction! </p>
-
-        <p> Hmmm.... But as we saw <a href="#section7" style="color:lightpink;">before</a>, the number of participants from Africa is only 39, and this might not be very representative of the population that we seek to explore.
-        </p>
+            <h3>Does increased gaming translate to lower life satisfaction?</h3>
+        </div>
     </div>
-</div>
 
-<div class="section" id="section12" style="height:1000px;"> 
-    <h1>Why do we still have low correlation?</h1>
-    <div class="text">
-        <p> Although the dataset claims to be the biggest dataset, it might not be the most accurate in showing a correlation between gaming and life satisfaction. Why? This is because there are many biases in the dataset, as well as the data collection methods.
-        </p>
-
-        <h3>Data Collection Method</h3>
-        <p>Because of the sheer scale of the survey, it is very hard to ensure that there is random sampling, which allows for an equal representation of the population. As such, the survey was posted on Reddit, hence most of the participants are users of Reddit. Also, the participants are generally skewed towards males from North America and Europe. </p>
+    <div class="section" id="section8">
+        <h1> Let's look at the correlation between the two factors!</h1>
         
-        <!-- insert table of data -->
-        <h3>Extraneous variables</h3>
-        <p>We also cannot discount the fact that life satisfaction is caused by a various number of other factors like social-economic status, race, education level, and more. Therefore, with there being lots of noise in the dataset, it is natural that a strong correlation cannot be found.</p>
-    
-    
+        <div id="canvas-container3">
+            <canvas id="ww-scatter-plot"></canvas>
+        </div>
+
+        <div class="text">
+            <p> I foresee a look of confusion on your face, <t class="name"></t> Indeed, I was very surprised to see
+                that there is such a low correlation between average number of gaming hours per week and average life
+                satisfaction for the entire world. <br><br>
+
+                From just the points itself, we are unable to really see any clear direction of points. The trendline formed shows a narrow decrease in life satisfaction as gaming hours per week increase.
+                
+                <h3>What does this mean? Do we merely just conclude that there is a low correlation between gaming and life
+                satisfaction? Is this the end?</h3>
+            </p>
+        </div>
     </div>
-   
-</div>
 
-<div class="section" id="section13"> 
-    <h1>Concluding Thoughts</h1>
-    <div class="text">
-        <p> Even though the correlation that we have established between the average number of gaming hours and life satisfaction is weak, we still do see a small decline. 
-            This means that excessive amounts of gaming might be linked with life satisfaction. </p>
+    <div class="section" id="section9">
+        <div class="text">
+            <h1>No! We cannot stop here, <t class="name"></t></h1>
 
-        <p>Future research can focus on narrowing the scope to establish a stronger correlation between the 2 variables, attempting to control for possible extraneous variables.
-        </p>
+            <p>Maybe let's take a look at the survey participant demographics to see if we can find something. How about
+                we examine the various regions instead? Breaking down our data can help us see if it is representative of the population we wish to explore, or perhaps even find new patterns!</p>
+        </div>
     </div>
-</div>
 
-<div class="section" id="section14">
-    <h1> Thank you for visiting my website, <t class="name"></t> <br> I hope that it has been interesting and informative for you! </h1>
-</div>
+    <div class="section" id="section10">
+        <h1>Survey Participants, by Regions</h1>
+
+        <div id="canvas-container4">
+            <canvas id="region-pie"></canvas>
+        </div>
+        <br>
+
+        <div class="text">
+            <p> It seems that the survey participant demographics aren't evenly spread out. Instead, we see a
+                concentration of participants from the North America and Europe region. This could be due to the fact that most 
+                participants were sourced from Reddit, which might have a larger proportion of users coming from certain regions... <br><br>
+
+                Let's now take a closer look into the correlation between gaming and life satisfaction by regions!
+
+                <h3>Do you think we'd see something different?</h3>
+            </p>
+        </div>
+    </div>
+
+    <div class="section" id="section11" style="height:900px;">
+        <h1>Scatterplot of Average Gaming Hours vs. Life Satisfaction by Region</h1>
+        <div id="canvas-container5">
+            <canvas id="scatter-plots"></canvas>
+        </div>
+        <!-- new div of buttons so that I can format them with flex wrap -->
+        <div id="buttonList">
+            <!-- buttons allow user to switch between chart views -->
+            <input type="button" value="Africa" class="region">
+            <input type="button" value="Asia" class="region">
+            <input type="button" value="Europe" class="region">
+            <input type="button" value="North America" class="region">
+            <input type="button" value="Oceania" class="region">
+            <input type="button" value="South America" class="region">
+        </div>
+        <div class="text">
+            <p> Click on the different buttons to see the scatterplot for each region! <br><br>
+                As we can see, the trendline slopes still do not seem to improve very much for the individual regions... 
+                They all remain quite flat, which perhaps could mean that there isn't really much correlation between gaming and life satisfaction...? <br><br>
+                
+                However, I'm wondering if you noticed something different, <t class="name"></t>
+                Africa's scatter plot is showing that there is a positive correlation between average number of gaming
+                hours and life satisfaction! This is something called the Simpson's Paradox, whereby the main trendline of the entire data 
+                differs after you break the data into different groups. Could this mean that higher amount of gaming is beneficial for people in the Africa region? </p>
+            <!-- allows user to go back to the section with the mentioned chart -->
+            <p> Hmmm.... But as we saw <a href="#section10" style="color:lightpink;">before</a>, the number of
+                participants from Africa is only 39, and this might not be very representative of the country.
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <!-- another text animation -->
+        <div class="text4">Now what?</div>
+        <div class="text5">Now what?</div>
+        <div class="text6">Now what?</div>
+        <div class="text7">Now what?</div>
+    </div>
+
+    <div class="section" id="section12">
+        <h1>Why do we still have low correlation?</h1>
+        <div class="text">
+            <p> Although the dataset claims to be the biggest dataset, it might not be the most accurate in showing a
+                correlation between gaming and life satisfaction. Why? This is because there are many biases in the
+                dataset, as well as the data collection methods.
+            </p>
+
+            <h3>Data Collection Method</h3>
+            <p>Because of the sheer scale of the survey, it is very hard to ensure that there is random sampling, which
+                allows for an equal representation of the population. Since Reddit seems to be a platform where many gamers over the world 
+                gather to discuss gameplay, the survey was posted on Reddit. Hence, we saw that
+                most of the participants are users of Reddit, as compared to other platforms. Also, the participants are generally skewed towards males
+                from North America and Europe. </p>
+
+            <h3>Extraneous variables</h3>
+            <p>We also cannot discount the fact that life satisfaction is caused by a various number of other factors
+                like social-economic status, race, education level, and more. Therefore, with there being lots of noise
+                in the dataset, it is natural that a strong correlation cannot be found.</p>
+            
+            <h3>Of course, there could still be the possibility of gaming hours not being very negatively correlated with life satisfaction, however, it is hard to come
+                to a conclusion based on flawed data. </h3>
+
+        </div>
+
+    </div>
+
+    <div class="section" id="section13">
+        <h1>Concluding Thoughts</h1>
+        <div class="text">
+            <p> Even though the correlation that we have established between the average number of gaming hours and life
+                satisfaction is weak, we still do see a small decline.
+                This means that EXCESSIVE amounts of gaming might still be linked with life satisfaction. </p>
+
+            <p>Future research can focus on narrowing the scope to establish a stronger correlation between the 2
+                variables, attempting to control for possible extraneous variables.
+            </p>
+        </div>
+    </div>
+
+    <div class="section" id="section14">
+        <h1> Thank you for visiting my website, <t class="name"></t> <br> I hope that it has been interesting and
+            informative for you! </h1>
+    </div>
 </body>
