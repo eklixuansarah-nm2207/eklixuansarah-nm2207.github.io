@@ -1,5 +1,98 @@
-ScrollReveal().reveal('.mainsection',{ delay: 300 });
-ScrollReveal().reveal('.section',{ delay: 600 });
+document.getElementById("soundon").addEventListener("click", function () {
+  document.location.href = "#video-container";
+});
+// viewFactor specifies what portion of the section should be in the viewport for it to be visible.
+// duration = how long animations take to complete
+// delay = time for reveal animations to begin
+ScrollReveal().reveal(".section", {
+  delay: 500,
+  viewFactor: 0.3,
+  duration: 500,
+});
+
+// first text animation
+gsap.to(".text0", {
+  x: "40%",
+  rotate: 20,
+  duration: 0.9,
+  scrollTrigger: {
+    trigger: ".text0",
+    scrub: true,
+    start: "top 50%",
+  },
+});
+gsap.to(".text2", {
+  x: "50%",
+  rotate: 30,
+  duration: 0.9,
+  scrollTrigger: {
+    trigger: ".text2",
+    scrub: true,
+    start: "top 50%",
+  },
+});
+gsap.to(".text1", {
+  x: "-40%",
+  rotate: -20,
+  duration: 0.9,
+  scrollTrigger: {
+    trigger: ".text1",
+    scrub: true,
+    start: "top 50%",
+  },
+});
+gsap.to(".text3", {
+  x: "-50%",
+  rotate: -30,
+  duration: 0.9,
+  scrollTrigger: {
+    trigger: ".text3",
+    scrub: true,
+    start: "top 50%",
+  },
+});
+
+// animation for now what
+gsap.to(".text4", {
+  x: "90%",
+  rotate: 20,
+  duration: 0.7,
+  scrollTrigger: {
+    trigger: ".text4",
+    scrub: true,
+    start: "top 50%",
+  },
+});
+gsap.to(".text6", {
+  x: "90%",
+  rotate: 30,
+  duration: 0.7,
+  scrollTrigger: {
+    trigger: ".text6",
+    scrub: true,
+    start: "top 50%",
+  },
+});
+gsap.to(".text5", {
+  x: "-90%",
+  rotate: -20,
+  duration: 0.7,
+  scrollTrigger: {
+    trigger: ".text5",
+    scrub: true,
+    start: "top 50%",
+  },
+});
+gsap.to(".text7", {
+  x: "-90%",
+  rotate: -30,
+  duration: 0.7,
+  scrollTrigger: {
+    trigger: ".text7",
+    scrub: true,
+    start: "top 50%",
+  },
+});
 
 // fetchapi
 const data = fetch(
@@ -10,7 +103,7 @@ const data = fetch(
   })
   .then(function (data) {
     const table = [];
-    const rows = data.split("\r\n"); 
+    const rows = data.split("\r\n");
 
     //creating the table
     rows.forEach((r, index) => {
@@ -18,12 +111,11 @@ const data = fetch(
       table.push(item);
     });
 
+    console.log(table);
     // declaring all the variables i'm using
- 
+
     const wwHours = table[3].slice(1);
     const wwSWL = table[4].slice(1);
-  
-
 
     // to replace greeting content with input name
     document
@@ -37,7 +129,6 @@ const data = fetch(
           names[i].innerHTML = name + ".";
         }
       });
-
     // to get song to loop when finished, but this doesn't seem to work. need to debug
     document.getElementById("song").loop = true;
 
@@ -69,22 +160,18 @@ const data = fetch(
       });
     }
 
-
     document.getElementById("yes").addEventListener("click", function () {
       // brings user to stated section upon click of button
-      document.location.href = "#section3.1";
+      document.location.href = "#section3";
+      document.getElementById("change").innerHTML =
+        "Nice! I love games too! I want you to think of your gaming habits and attitudes. How often do you game per week? For how long? How do you feel while gaming? How do you feel <i>after</i> gaming? <br><br> I'm sure you would understand the feeling of wanting to keep continuing game after game, would you?";
     });
 
     // when no is pressed, user is moved to the next section, and innerhtml of the next section is changed
     document.getElementById("no").addEventListener("click", function () {
-      document.location.href = "#section3.1";
+      document.location.href = "#section3";
       document.getElementById("change").innerHTML =
-        "Oh, that's alright! You could have other hobbies, no worries. However, it would still be interesting to learn about the worldwide gaming situation, wouldn't it? :) Or perhaps you might know someone around you who is an avid gamer. Let me try to describe to you how gaming is like. <br><br>";
-    });
-
-    // button to go next
-    document.getElementById("ok").addEventListener("click", function () {
-      document.location.href = "#section4";
+        "Oh, that's alright! You could have other hobbies, no worries. However, it would still be interesting to learn about the worldwide gaming situation, wouldn't it? :) Or perhaps you might know someone around you who is an avid gamer. <br><br> Let me try to describe to you how gaming is like. It's something like scrolling on TikTok, for example.";
     });
 
     // bar chart for region penetration %
@@ -108,7 +195,7 @@ const data = fetch(
           label: "Average % by Region",
           data: percentage,
           fill: false,
-          backgroundColor: "#e97976",
+          backgroundColor: "#ffff99",
         },
       ],
       grid: {
@@ -157,6 +244,23 @@ const data = fetch(
             },
           ],
         },
+        annotation: {
+          annotations: [
+            {
+              type: "line",
+              mode: "vertical",
+              scaleID: "x-axis-0",
+              value: 82.0,
+              borderColor: "red",
+              borderWidth: 2,
+              label: {
+                content: "Worldwide Avg: 82%",
+                enabled: true,
+                position: "top",
+              },
+            },
+          ],
+        },
       },
     });
 
@@ -171,7 +275,7 @@ const data = fetch(
       "Reddit",
       "TeamLiquid.net",
     ];
-    const recruitmentcolor = ["green", "cyan", "#291F1E", "#ffb347", "red"];
+    const recruitmentcolor = ["green", "cyan", "#291F1E", "#ffc87a", "red"];
     const ch = new Chart("demographics1", {
       type: "doughnut",
       data: {
@@ -194,14 +298,12 @@ const data = fetch(
           display: true,
           text: "Gender",
           fontColor: "bisque",
-          fontfamily: "'Fredoka One', cursive",
-          fontSize:20,
+          fontSize: 20,
         },
         legend: {
           labels: {
             boxWidth: 20,
             fontColor: "bisque",
-            fontfamily: "'Fredoka One', cursive",
             fontSize: 12,
           },
           position: "top",
@@ -228,7 +330,7 @@ const data = fetch(
         ch.options.title.text = ["Participants by Gender"];
 
         document.getElementById("toggle").innerHTML =
-          "Change to Recruitment Platform";
+          "<b>Change to Recruitment Platform<b>";
       } else {
         // changing data from gender to recruiment
         ch.data.datasets[0].data = recruitment;
@@ -239,7 +341,7 @@ const data = fetch(
         ch.data.datasets[0].backgroundColor = recruitmentcolor;
         ch.options.title.text = ["Where participants were", "recruited from"];
         // change text in toggle button too
-        document.getElementById("toggle").innerHTML = "Change to Gender";
+        document.getElementById("toggle").innerHTML = "<b>Change to Gender<b>";
       }
       // update the chart with the new details
       ch.update();
@@ -300,64 +402,67 @@ const data = fetch(
         },
       },
     });
-    
+
     // columns 1 to 105, because there are empty values
-    const residence = table[0].slice(1,105);
-    const residenceAvgHours= table[1].slice(1,105);
-    const residenceAvgSWL = table[2].slice(1,105);
-  
+    const residence = table[0].slice(1, 105);
+    console.log(residence);
+    const residenceAvgHours = table[1].slice(1, 105);
+    console.log(residenceAvgHours);
+    const residenceAvgSWL = table[2].slice(1, 105);
+    console.log(residenceAvgSWL);
+
     // round off numbers to 1 d.p.
-    let len = residenceAvgSWL.length
-    for(let x=0; x < len; x++){ 
-    // parseFloat ensures all are numbers
-    residenceAvgSWL[x] = parseFloat(residenceAvgSWL[x]).toFixed(1); 
-    };
+    let len = residenceAvgSWL.length;
+    for (let x = 0; x < len; x++) {
+      // parseFloat ensures all are numbers
+      residenceAvgSWL[x] = parseFloat(residenceAvgSWL[x]).toFixed(1);
+    }
 
     // map chart
 
-    const mapdata = [{
+    const mapdata = [
+      {
         type: "choropleth",
         // so that plotly knows that the variable is meant to be country names
-        locationmode:'country names',
+        locationmode: "country names",
         locations: residence,
         z: residenceAvgHours,
         text: residenceAvgSWL,
         customdata: residence,
         // create customised tooltip
         hovertemplate:
-        // gaming hours to be presented in 1 dp by using the code: ,.1f
-            "<b>%{customdata}</b> <br><br>" +
-            "Average Gaming Hours Per Week: %{z:,.1f}<br>" +
-            "Average Satisfaction with Life: %{text}<br>" +
-            "<extra></extra>"
-      }];
-      
+          // gaming hours to be presented in 1 dp by using the code: ,.1f
+          "<b>%{customdata}</b> <br><br>" +
+          "Average Gaming Hours Per Week: %{z:,.1f}<br>" +
+          "Average Satisfaction with Life: %{text}<br>" +
+          "<extra></extra>",
+      },
+    ];
 
     const maplayout = {
-      font:{
-        color:'white'
+      paper_bgcolor: "transparent",
+      font: {
+        color: "white",
       },
-      paper_bgcolor:'rgba(0,0,0,0)',
       geo: {
         // map view type
-        resolution: 150,
-        lataxis: {
-          range: [-90, 90]
-        }, 
-        lonaxis: {
-          range: [-180, 180]
-        },
+        scope: "world",
+        bgcolor: "transparent",
+        showframe: false,
+        resolution: 110,
+        showland: true,
+        oceancolor: "#aec6cf",
+        showocean: true,
+        landcolor: "#bfefbf",
+        showlakes: true,
+        lakecolor: "#e0ffff",
         projection: {
           type: "robinson",
         },
-        width:600,
-        height: 500,
       },
-    }
-    const mapconfig = {responsive:true}
+    };
+    const mapconfig = { responsive: true };
     Plotly.newPlot("mapchart", mapdata, maplayout, mapconfig);
-      
-  
 
     // putting the data from different slices into coordinates for scatterplot
     const coords = wwHours.map((s, h) => ({ x: s, y: wwSWL[h] }));
@@ -369,65 +474,92 @@ const data = fetch(
         datasets: [
           {
             data: coords,
-            label:"Label",
-            pointRadius:2,
-            pointBackgroundColor:'white',
+            label: "Label",
+            pointRadius: 2,
+            pointBackgroundColor: "white",
           },
-        ]
+        ],
       },
       options: {
-        tooltips:{
-          mode:'index',
-          callbacks:{
-            label:function(tooltipItems){
-              return 'Number of Hours per week: ' + tooltipItems.xLabel + '\n Life Satisfaction: ' + tooltipItems.yLabel;}
-            } 
+        tooltips: {
+          mode: "index",
+          callbacks: {
+            label: function (tooltipItems) {
+              if (tooltipItems.datasetIndex === 2) {
+                return "y=-0.066x+21.2107";
+              } else {
+                return (
+                  "Number of Hours per week: " +
+                  tooltipItems.xLabel +
+                  "\n Life Satisfaction: " +
+                  tooltipItems.yLabel
+                );
+              }
+            },
+          },
         },
-          legend:false,
-          responsive:true,
-          plugins:{
-            legend:{display:false,},
-          },
-          animation:false,
-          title:{
-            display:false
-          },
-          scales: {
-            xAxes: [{
-                scaleLabel: {
-                  labelString: ['Number of Hours of Gaming per Week'],
-                  display: true,
-                  fontColor: "white",
-                  fontSize:20
-                },
-                ticks: {
-                  fontColor: "white",
-                },
-                gridLines: {
-                  display: false,
-                }
+        legend: false,
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+        },
+        animation: false,
+        title: {
+          display: false,
+        },
+        scales: {
+          xAxes: [
+            {
+              scaleLabel: {
+                labelString: ["Number of Hours of Gaming per Week"],
+                display: true,
+                fontColor: "white",
+                fontSize: 20,
               },
-            ],
-            yAxes: [
-              {
-                scaleLabel:{
-                  labelString: "Life Satisfaction Score (out of 35)",
-                  display: true,
-                  fontSize:20,
-                  fontColor: "white",
-                },
-                ticks: {
-                  fontColor: "white",
-                },
-                gridLines: {
-                  display: false,
-                }
+              ticks: {
+                fontColor: "white",
               },
-            ],
-          },
+              gridLines: {
+                display: false,
+              },
+            },
+          ],
+          yAxes: [
+            {
+              scaleLabel: {
+                labelString: "Life Satisfaction Score (out of 35)",
+                display: true,
+                fontSize: 20,
+                fontColor: "white",
+              },
+              ticks: {
+                fontColor: "white",
+              },
+              gridLines: {
+                display: false,
+              },
+            },
+          ],
         },
       },
-    );
+    });
+
+    // adding trendline
+    let trendLineDataSet = {
+      type: "line",
+      data: [
+        { x: 0, y: 21.207 },
+        { x: 112, y: 13.815 },
+      ],
+      borderColor: "red",
+      borderWidth: 3,
+      showLine: true,
+      pointRadius: 0,
+      fill: false,
+    };
+    scatterChart.data.datasets.push(trendLineDataSet);
+    scatterChart.data.datasets.reverse();
+    scatterChart.update();
 
     // pie chart of regions
     const region = {
@@ -464,19 +596,11 @@ const data = fetch(
         legend: {
           display: true,
         },
-        title: {
-          display: true,
-          text: "Number of Participants by Region",
-          fontColor: "bisque",
-          fontfamily: "'Fredoka One', cursive",
-          fontSize: 24,
-        },
         legend: {
           labels: {
             boxWidth: 20,
             fontColor: "bisque",
-            fontfamily: "'Fredoka One', cursive",
-            fontSize: 10,
+            fontSize: 16,
           },
           position: "right",
         },
@@ -490,24 +614,27 @@ const data = fetch(
     });
     // scatterplot of different regions
 
-    const africaHours = table[5].slice(1,40);
-    const africaSWL = table[6].slice(1,40);
-    const oceaniaHours = table[7].slice(1,232);
-    const oceaniaSWL = table[8].slice(1,232);
-    const saHours = table[9].slice(1,391);
-    const saSWL = table[10].slice(1,391);
-    const asiaHours = table[11].slice(1,208);
-    const asiaSWL = table[12].slice(1,208);
-    const euHours = table[13].slice(1,4529);
-    const euSWL = table[14].slice(1,4529);
-    const naHours = table[15].slice(1,4021);
-    const naSWL = table[16].slice(1,4021);
+    const africaHours = table[5].slice(1, 40);
+    const africaSWL = table[6].slice(1, 40);
+    const oceaniaHours = table[7].slice(1, 232);
+    const oceaniaSWL = table[8].slice(1, 232);
+    const saHours = table[9].slice(1, 391);
+    const saSWL = table[10].slice(1, 391);
+    const asiaHours = table[11].slice(1, 208);
+    const asiaSWL = table[12].slice(1, 208);
+    const euHours = table[13].slice(1, 4529);
+    const euSWL = table[14].slice(1, 4529);
+    const naHours = table[15].slice(1, 4021);
+    const naSWL = table[16].slice(1, 4021);
 
     const africaData = africaHours.map((s, h) => ({ x: s, y: africaSWL[h] }));
     const asiaData = asiaHours.map((s, h) => ({ x: s, y: asiaSWL[h] }));
     const euData = euHours.map((s, h) => ({ x: s, y: euSWL[h] }));
     const naData = naHours.map((s, h) => ({ x: s, y: naSWL[h] }));
-    const oceaniaData = oceaniaHours.map((s, h) => ({ x: s, y: oceaniaSWL[h] }));
+    const oceaniaData = oceaniaHours.map((s, h) => ({
+      x: s,
+      y: oceaniaSWL[h],
+    }));
     const saData = saHours.map((s, h) => ({ x: s, y: saSWL[h] }));
 
     let ctx2 = document.getElementById("scatter-plots");
@@ -517,113 +644,153 @@ const data = fetch(
         datasets: [
           {
             data: africaData,
-            label:"Africa",
-            pointRadius:2,
-            pointBackgroundColor:'white',
+            label: "Africa",
+            pointRadius: 2,
+            pointBackgroundColor: "white",
           },
-        ]
+        ],
       },
       options: {
-        tooltips:{
-          mode:'index',
-          callbacks:{
-            label:function(tooltipItems){
-              return 'Number of Hours per week: ' + tooltipItems.xLabel + '\u000d Life Satisfaction: ' + tooltipItems.yLabel;}
-            } 
+        tooltips: {
+          mode: "index",
+          callbacks: {
+            label: function (tooltipItems) {
+              return (
+                "Number of Hours per week: " +
+                tooltipItems.xLabel +
+                "\u000d Life Satisfaction: " +
+                tooltipItems.yLabel
+              );
+            },
+          },
         },
-          legend:false,
-          responsive:true,
-          plugins:{
-            legend:{display:false,},
-          },
-          animation:false,
-          title:{
-            display:true,
-            text:'Africa',
-            fontSize:24,
-            fontColor:'white'
-          },
-          scales: {
-            xAxes: [{
-                scaleLabel: {
-                  labelString: ['Number of Hours of Gaming per Week'],
-                  display: true,
-                  fontColor: "white",
-                  fontSize:20
-                },
-                ticks: {
-                  fontColor: "white",
-                  suggestedMin: 0,
-                  suggestedMax: 116,
-                },
-                gridLines: {
-                  display: false,
-                }
+        legend: false,
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+        },
+        animation: false,
+        title: {
+          display: true,
+          text: "Africa",
+          fontSize: 24,
+          fontColor: "white",
+        },
+        scales: {
+          xAxes: [
+            {
+              scaleLabel: {
+                labelString: ["Number of Hours of Gaming per Week"],
+                display: true,
+                fontColor: "white",
+                fontSize: 20,
               },
-            ],
-            yAxes: [
-              {
-                scaleLabel:{
-                  labelString: "Life Satisfaction Score (out of 35)",
-                  display: true,
-                  fontSize:20,
-                  fontColor: "white",
-                },
-                ticks: {
-                  fontColor: "white",
-                  suggestedMin: 0,
-                  suggestedMax: 35,
-                },
-                gridLines: {
-                  display: false,
-                }
+              ticks: {
+                fontColor: "white",
+                suggestedMin: 0,
+                suggestedMax: 116,
               },
-            ],
-          },
+              gridLines: {
+                display: false,
+              },
+            },
+          ],
+          yAxes: [
+            {
+              scaleLabel: {
+                labelString: "Life Satisfaction Score (out of 35)",
+                display: true,
+                fontSize: 20,
+                fontColor: "white",
+              },
+              ticks: {
+                fontColor: "white",
+                suggestedMin: 0,
+                suggestedMax: 35,
+              },
+              gridLines: {
+                display: false,
+              },
+            },
+          ],
         },
       },
-    );
+    });
 
-    let updateScatter = function(data,label){
-      scatterChartRegion.data.datasets[0].data = data;
-      scatterChartRegion.data.datasets[0].label = label;
+    const africaTL = [
+      { x: 0, y: 16.647 },
+      { x: 50, y: 22.112 },
+    ];
+    const oceaniaTL = [
+      { x: 0, y: 20.79 },
+      { x: 90, y: 14.625 },
+    ];
+    const saTL = [
+      { x: 0, y: 20.639 },
+      { x: 85, y: 17.8085 },
+    ];
+    const asiaTL = [
+      { x: 0, y: 18.753 },
+      { x: 75, y: 18.093 },
+    ];
+    const euTL = [
+      { x: 0, y: 21.394 },
+      { x: 105, y: 12.91 },
+    ];
+    const naTL = [
+      { x: 0, y: 21.222 },
+      { x: 112, y: 15.0508 },
+    ];
+
+    // adding trendline
+    let trendLineDataSet2 = {
+      type: "line",
+      data: africaTL,
+      borderColor: "red",
+      borderWidth: 3,
+      showLine: true,
+      pointRadius: 0,
+      fill: false,
+    };
+    scatterChartRegion.data.datasets.push(trendLineDataSet2);
+    scatterChartRegion.data.datasets.reverse();
+    scatterChartRegion.update();
+
+    let updateScatter = function (line, data, label) {
+      scatterChartRegion.data.datasets[1].data = data;
+      scatterChartRegion.data.datasets[1].label = label;
       scatterChartRegion.options.title.text = label;
+      trendLineDataSet2.data = line;
       scatterChartRegion.update();
     };
 
     // event handler that changes chart view between regions when clicked
-    let change = document.getElementsByClassName("region")
-    for (let i=0;i<change.length;i++){
+    let change = document.getElementsByClassName("region");
+    for (let i = 0; i < change.length; i++) {
       // for every button, change background colour when mouse hovers over the button
       change[i].addEventListener("mouseover", function () {
         change[i].style.backgroundColor = "#5c6a85";
       });
       // for every button, change background colour back to original when mouse leaves button
-        change[i].addEventListener("mouseleave", function () {
+      change[i].addEventListener("mouseleave", function () {
         change[i].style.backgroundColor = "#677694";
       });
 
       // changing charts
-      change[i].addEventListener("click", function(){
-         if (change[i].value=="Africa") {
-          updateScatter(africaData, "Africa");
+      change[i].addEventListener("click", function () {
+        if (change[i].value == "Africa") {
+          updateScatter(africaTL, africaData, "Africa");
+        } else if (change[i].value == "Asia") {
+          updateScatter(asiaTL, asiaData, "Asia");
+        } else if (change[i].value == "Europe") {
+          updateScatter(euTL, euData, "Europe");
+        } else if (change[i].value == "North America") {
+          updateScatter(naTL, naData, "North America");
+        } else if (change[i].value == "Oceania") {
+          updateScatter(oceaniaTL, oceaniaData, "Oceania");
+        } else if (change[i].value == "South America") {
+          updateScatter(saTL, saData, "South America");
         }
-        else if(change[i].value=="Asia"){
-          updateScatter(asiaData,"Asia");
-        }
-        else if (change[i].value=="Europe") {
-          updateScatter(euData,"Europe");
-        }
-        else if (change[i].value=="North America") {
-          updateScatter(naData,"North America");
-        }
-        else if (change[i].value=="Oceania") {
-          updateScatter(oceaniaData,"Oceania");
-        }
-        else if(change[i].value=="South America"){
-          updateScatter(saData,"South America");
-        }
-      })
+      });
     }
-   
   });
