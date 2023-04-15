@@ -29,7 +29,8 @@
 
     <!-- video background -->
     <div class="video-container" id="video-container">
-        <h1 id="press"> GAMING</h1>
+        <h1> GAMING</h1>
+        <h3> Scroll after you're done enjoying the video! </h3>
         <!-- video plays automatically and has no sound -->
         <video autoplay loop muted id="video">
             <source src="resources/gameVideo.mp4" type="video/mp4">
@@ -56,7 +57,8 @@
             <h1 id="greeting"></h1>
             <p> Welcome to my website about gaming. Here I will be exploring the effects of gaming on life satisfaction.
                 Are there many people who like to play games?
-                Is excessive gaming really as bad as people think it is? Do we need to do something about it? </p>
+                Is excessive gaming really as bad as people think it is? Do we need to do something about it? 
+            </p>
             <!-- use of a random letter 't' to indicate that the area should be replaced with the user's name -->
             <p> Firstly, let's talk about you, <t class="name"></t>
             </p>
@@ -88,10 +90,10 @@
 
     <div class="section">
         <!-- text animation -->
-        <div class="text0">Could this be a problem?</div>
-        <div class="text1">Could this be a problem?</div>
-        <div class="text2">Could this be a problem?</div>
-        <div class="text3">Could this be a problem?</div>
+        <div class="anim1" id="text0">Could this be a problem?</div>
+        <div class="anim1" id="text1">Could this be a problem?</div>
+        <div class= "anim1" id="text2">Could this be a problem?</div>
+        <div class= "anim1" id="text3">Could this be a problem?</div>
     </div>
 
     <div class="section" id="section4">
@@ -218,9 +220,7 @@
             <p> I foresee a look of confusion on your face, <t class="name"></t> Indeed, I was very surprised to see
                 that there is such a low correlation between average number of gaming hours per week and average life
                 satisfaction for the entire world. <br><br>
-
                 From just the points itself, we are unable to really see any clear direction of points. The trendline formed shows a narrow decrease in life satisfaction as gaming hours per week increase.
-                
                 <h3>What does this mean? Do we merely just conclude that there is a low correlation between gaming and life
                 satisfaction? Is this the end?</h3>
             </p>
@@ -230,9 +230,10 @@
     <div class="section" id="section9">
         <div class="text">
             <h1>No! We cannot stop here, <t class="name"></t></h1>
-
             <p>Maybe let's take a look at the survey participant demographics to see if we can find something. How about
-                we examine the various regions instead? Breaking down our data can help us see if it is representative of the population we wish to explore, or perhaps even find new patterns!</p>
+                we examine the various regions instead? Breaking down our data can help us see if it is representative of 
+                the population we wish to explore, or perhaps even find new patterns!
+            </p>
         </div>
     </div>
 
@@ -248,9 +249,7 @@
             <p> It seems that the survey participant demographics aren't evenly spread out. Instead, we see a
                 concentration of participants from the North America and Europe region. This could be due to the fact that most 
                 participants were sourced from Reddit, which might have a larger proportion of users coming from certain regions... <br><br>
-
                 Let's now take a closer look into the correlation between gaming and life satisfaction by regions!
-
                 <h3>Do you think we'd see something different?</h3>
             </p>
         </div>
@@ -275,13 +274,12 @@
             <p> Click on the different buttons to see the scatterplot for each region! <br><br>
                 As we can see, the trendline slopes still do not seem to improve very much for the individual regions... 
                 They all remain quite flat, which perhaps could mean that there isn't really much correlation between gaming and life satisfaction...? <br><br>
-                
                 However, I'm wondering if you noticed something different, <t class="name"></t>
                 Africa's scatter plot is showing that there is a positive correlation between average number of gaming
                 hours and life satisfaction! This is something called the Simpson's Paradox, whereby the main trendline of the entire data 
-                differs after you break the data into different groups. Could this mean that higher amount of gaming is beneficial for people in the Africa region? </p>
-            <!-- allows user to go back to the section with the mentioned chart -->
-            <p> Hmmm.... But as we saw <a href="#section10" style="color:lightpink;">before</a>, the number of
+                differs after you break the data into different groups. Could this mean that higher amount of gaming is beneficial for people in the Africa region?
+                 <!-- allows user to go back to the section with the mentioned chart -->
+                Hmmm.... But as we saw <a href="#section10" style="color:lightpink;">before</a>, the number of
                 participants from Africa is only 39, and this might not be very representative of the country.
             </p>
         </div>
@@ -289,10 +287,10 @@
 
     <div class="section">
         <!-- another text animation -->
-        <div class="text4">Now what?</div>
-        <div class="text5">Now what?</div>
-        <div class="text6">Now what?</div>
-        <div class="text7">Now what?</div>
+        <div class="anim1" id="text4">Now what?</div>
+        <div class="anim1" id="text5">Now what?</div>
+        <div class="anim1" id="text6">Now what?</div>
+        <div class="anim1" id="text7">Now what?</div>
     </div>
 
     <div class="section" id="section12">
@@ -302,24 +300,22 @@
                 correlation between gaming and life satisfaction. Why? This is because there are many biases in the
                 dataset, as well as the data collection methods.
             </p>
-
             <h3>Data Collection Method</h3>
             <p>Because of the sheer scale of the survey, it is very hard to ensure that there is random sampling, which
                 allows for an equal representation of the population. Since Reddit seems to be a platform where many gamers over the world 
                 gather to discuss gameplay, the survey was posted on Reddit. Hence, we saw that
                 most of the participants are users of Reddit, as compared to other platforms. Also, the participants are generally skewed towards males
-                from North America and Europe. </p>
-
+                from North America and Europe. 
+            </p>
             <h3>Extraneous variables</h3>
             <p>We also cannot discount the fact that life satisfaction is caused by a various number of other factors
                 like social-economic status, race, education level, and more. Therefore, with there being lots of noise
-                in the dataset, it is natural that a strong correlation cannot be found.</p>
-            
+                in the dataset, it is natural that a strong correlation cannot be found.
+            </p>
             <h3>Of course, there could still be the possibility of gaming hours not being very negatively correlated with life satisfaction, however, it is hard to come
-                to a conclusion based on flawed data. </h3>
-
+                to a conclusion based on flawed data. 
+            </h3>
         </div>
-
     </div>
 
     <div class="section" id="section13">
@@ -327,16 +323,19 @@
         <div class="text">
             <p> Even though the correlation that we have established between the average number of gaming hours and life
                 satisfaction is weak, we still do see a small decline.
-                This means that EXCESSIVE amounts of gaming might still be linked with life satisfaction. </p>
-
-            <p>Future research can focus on narrowing the scope to establish a stronger correlation between the 2
-                variables, attempting to control for possible extraneous variables.
+                This means that EXCESSIVE amounts of gaming might still be linked with life satisfaction. Therefore, it's always good to take note 
+                of your gaming hours and how gaming makes you feel.
+            </p>
+            <p> Future research can focus on narrowing the scope to see if a stronger correlation between the two
+                variables can be established. Perhaps a collaboration between researchers from over the world can be done. This would make it easier
+                to get a more representative sample. Researchers should also attempt to control for possible extraneous variables.
             </p>
         </div>
     </div>
 
     <div class="section" id="section14">
         <h1> Thank you for visiting my website, <t class="name"></t> <br> I hope that it has been interesting and
-            informative for you! </h1>
+            informative for you! 
+        </h1>
     </div>
 </body>
