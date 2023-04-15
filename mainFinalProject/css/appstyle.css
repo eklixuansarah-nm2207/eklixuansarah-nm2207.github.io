@@ -25,8 +25,8 @@ body {
   /* gradient background from lighter blue to darker blue */
   /* the difference in colours isn't that big to preserve foreground-background contrast */
   background-image: linear-gradient(#2f4564, #0a1b39);
-  /* margin-top: 0;
-  margin-left: 0; */
+  margin-top: 0;
+  margin-left: 0;
   font-size: 20px;
   color: bisque;
   font-family: "Rubik", sans-serif;
@@ -39,6 +39,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width:100%;
 }
 
 /* setting font of heading 1*/
@@ -118,11 +119,11 @@ subheading {
   opacity: 70%;
 }
 
-/* box to type name */
+/* box for user to type their name */
 #nameBox {
   width: 50%;
   height: 50px;
-  background-color: #283d5b;
+  background-color: #293f5d;
 }
 
 /* change format of the input text */
@@ -164,8 +165,9 @@ input[type="button"] {
   font-size: 20px;
   background-color: #677694;
   color: #0a1b39;
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: 10px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
 }
 
 /* styling all buttons */
@@ -173,25 +175,28 @@ input[type="button"] {
   color: #0a1b39;
   background-color: #677694;
   padding: 10px;
+  border-radius:10px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
 }
 
 /* formatting first text animation */
-.text0,
-.text2 {
+#text0,
+#text2 {
   /* create the block letter effect  */
   -webkit-text-fill-color: bisque;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   font-family: "Rubik", sans-serif;
-  font-size: 4em;
+  font-size: 2.5em;
 }
-.text1,
-.text3 {
+#text1,
+#text3 {
   -webkit-text-fill-color: #e78587;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   font-family: "Rubik", sans-serif;
-  font-size: 4em;
+  font-size: 2.5em;
 }
 
 /* gaming penetration chart */
@@ -243,13 +248,13 @@ input.region {
   font-weight: 500;
   color: #0a1b39;
   background-color: #677694;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 5px;
 }
 
 /* formatting second text animation */
-.text4,
-.text6 {
+#text4,
+#text6 {
   /* create the block letter effect  */
   -webkit-text-fill-color: bisque;
   -webkit-text-stroke-width: 2px;
@@ -257,8 +262,8 @@ input.region {
   font-family: "Rubik", sans-serif;
   font-size: 4em;
 }
-.text5,
-.text7 {
+#text5,
+#text7 {
   -webkit-text-fill-color: #aec6cf;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
